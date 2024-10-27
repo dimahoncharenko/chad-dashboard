@@ -1,0 +1,1 @@
+export const MOCK_REQUEST_DURATION = 5000
