@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 
@@ -12,7 +13,9 @@ export const Providers = ({ children }: Props) => {
   return (
     <AppRouterCacheProvider>
       <ThemeProvider theme={theme}>
-        <SessionStoreProvider>{children}</SessionStoreProvider>
+        <SessionStoreProvider>
+          <Suspense>{children}</Suspense>
+        </SessionStoreProvider>
       </ThemeProvider>
     </AppRouterCacheProvider>
   )

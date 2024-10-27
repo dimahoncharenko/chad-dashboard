@@ -1,10 +1,4 @@
-import {
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Typography,
-} from '@mui/material'
+import { List, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 
 interface ListingItem {
   icon?: React.ReactNode

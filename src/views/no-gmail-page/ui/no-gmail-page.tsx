@@ -18,7 +18,7 @@ import { MOCK_REQUEST_DURATION } from '@/shared/constants'
 import { sleep } from '@/shared/lib/utils/async'
 
 export const NoGmailPage = () => {
-  const { control, handleSubmit, formState } = useForm({
+  const { control, handleSubmit } = useForm({
     defaultValues: {
       platform: '',
     },
@@ -28,8 +28,7 @@ export const NoGmailPage = () => {
 
   const router = useRouter()
 
-  const onSubmit = async (values: typeof formState.defaultValues) => {
-    console.log(values)
+  const onSubmit = async () => {
     setIsLoading(true)
 
     await sleep(MOCK_REQUEST_DURATION)

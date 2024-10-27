@@ -1,7 +1,7 @@
 'use client'
 
-import { Fragment, useEffect, useState } from 'react'
-import { Fade, Radio, Slide, Zoom } from '@mui/material'
+import { useEffect, useState } from 'react'
+import { Fade, Radio, Zoom } from '@mui/material'
 
 import { cn } from '@/shared/lib/utils/cn-merge'
 

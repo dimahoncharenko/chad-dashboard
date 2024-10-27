@@ -44,7 +44,7 @@ export const LoginForm = () => {
     setIsLoading(true)
     await sleep(MOCK_REQUEST_DURATION)
 
-    !isMobile &&
+    if (!isMobile)
       addSession({
         email: data.email,
         name,
@@ -56,8 +56,8 @@ export const LoginForm = () => {
   }
 
   useEffect(() => {
-    loggedIn && router.push('/')
-  }, [loggedIn])
+    if (loggedIn) router.push('/')
+  }, [loggedIn, router])
 
   return (
     <form
@@ -145,7 +145,7 @@ export const LoginForm = () => {
         Login
       </BrandButton>
       <Typography className='text-center !text-xs text-blue-800'>
-        Don't have an account?{' '}
+        {`Don't have an account? `}
         <Link href='/register' className='text-blue-500'>
           Join the waitlist
         </Link>

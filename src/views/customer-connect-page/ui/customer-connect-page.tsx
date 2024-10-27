@@ -31,7 +31,7 @@ export const CustomerConnectPage = () => {
     setIsLoading(true)
     await sleep(MOCK_REQUEST_DURATION)
 
-    !isMobile && addSession({ email, name, loggedIn: true, password })
+    if (!isMobile) addSession({ email, name, loggedIn: true, password })
     router.push(isMobile ? '/onboarding-complete-mobile' : '/')
   }
 
@@ -99,7 +99,7 @@ export const CustomerConnectPage = () => {
         href='/no-gmail'
         className='mt-4 block text-center text-xs/[18px] -tracking-xs'
       >
-        I don't use Gmail
+        {`I don't use Gmail`}
       </Link>
     </>
   )
